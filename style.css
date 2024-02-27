@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+    --background-color: #FFFFFF;
+    --text-color-1: #000000;
+    --text-color-2: #646464;
+    --text-color-3: #969696;
+    --button-color: #000000;
+    --button-text-color: #FFFFFF;
+    --button-color-hover: #323232;
+    --shadow-color: #00000040;
+}
+
+.dark {
+    --background-color: #0F0F0F;
+    --text-color-1: #FFFFFF;
+    --text-color-2: #9B9B9B;
+    --text-color-3: #828282;
+    --button-color: #FFFFFF;
+    --button-text-color: #000000;
+    --button-color-hover: #CDCDCD;
+    --shadow-color: #ffffff60;
+}
+
+html * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+h1 {
+    font-weight: 600;
+    color: var(--text-color-1);
+}
+
+p {
+    font-weight: 400;
+    color: var(--text-color-2);
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+.container {
+    max-width: 768px;
+    padding: 5rem 1.5rem;
+    margin: auto;
+}
+
+/* HEADER E PERFIL */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.perfil {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.perfil img {
+    width: 3rem;
+}
+
+.perfil p {
+    font-weight: 500;
+    color: var(--text-color-3);
+}
+
+header button {
+    width: 3rem;
+    height: 3rem;
+    padding: 0.5rem;
+    border: none;
+    cursor: pointer;
+    color: var(--button-color);
+    background-color: var(--background-color);
+    animation: 1s button ease 1;
+}
+
+header button:hover {
+    color: var(--button-color-hover);
+}
+
+/* SOBRE MIM */
+
+.sobre {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* SLIDER COM AS TECNOLOGIAS */
+
+.tecnologias {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.carrossel {
+    position: relative;
+    height: 4rem;
+    white-space: nowrap;
+    overflow-x: clip;
+}
+
+.carrossel::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 4rem;
+    height: 4rem;
+    background: linear-gradient(to right, var(--background-color), rgba(0, 0, 0, 0));
+    z-index: 2;
+}
+
+.carrossel::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: "";
+    width: 4rem;
+    height: 4rem;
+    background: linear-gradient(to left, var(--background-color), rgba(0, 0, 0, 0));
+    z-index: 2;
+}
+
+.carrossel-logos {
+    display: inline-block;
+    height: 4rem;
+}
+
+.carrossel-logo {
+    position: relative;
+    display: inline-block;
+    height: 4rem;
+    margin-right: 1.5rem;
+}
+
+.carrossel-logo:hover span {
+    display: inherit;
+    animation: 0.2s tooltip linear;
+}
+
+.carrossel-logo span {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(calc(-50%));
+    top: calc(100% + 1.5rem);
+
+    padding: 0.5rem;
+    background-color: var(--button-color-hover);
+    color: var(--button-text-color);
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+.carrossel-logo span::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    display: block;
+    height: 0.5rem;
+    width: 0.5rem;
+    background-color: var(--button-color-hover);
+}
+
+/* MEUS PROJETOS */
+
+.projetos {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.projeto {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.projeto img {
+    width: 8rem;
+    height: 8rem;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px var(--shadow-color);
+    transition: 0.5s;
+}
+
+.projeto img:hover {
+    filter: brightness(90%);
+}
+
+.projeto .info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.projeto h2 {
+    font-weight: 500;
+    color: var(--text-color-1);
+}
+
+.projeto p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+/* ÁREA COM LINKS PARA CONTATO */
+
+.contato {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contato .links {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.contato a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    height: 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--button-text-color);
+    background-color: var(--button-color);
+}
+
+.contato a:hover {
+    background-color: var(--button-color-hover);
+}
+
+/* FOOTER DA PÁGINA */
+
+footer {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer p {
+    color: var(--text-color-3);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 600px) {
+
+    /* HEADER E PERFIL */
+    header button {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        color: var(--button-text-color);
+        background-color: var(--button-color);
+        border-radius: 50%;
+        animation: 1s button ease 1;
+        z-index: 10;
+    }
+    
+    header button:hover {
+        color: var(--background-color);
+    }
+
+    /* MEUS PROJETOS */
+
+    .projeto {
+        position: relative;
+        flex-direction: column;
+    }
+
+    .projeto img {
+        width: inherit;
+        height: fit-content;
+    }
+
+    .projeto .info p {
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    }
+
+    /* ÁREA COM LINKS PARA CONTATO */
+
+    .contato .links {
+        gap: 0.5rem;
+    }
+
+    /* FOOTER DA PÁGINA */
+
+    footer {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* ANIMATION */
+@keyframes button {
+    from {
+        scale: 1.4;
+        transform: rotate(0);
+    }
+
+    to {
+        scale: 1;
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes tooltip {
+    from {
+        opacity: 0;
+        margin-top: 1rem;
+    }
+
+    to {
+        opacity: 1;
+        margin-top: 0;
+    }
+}

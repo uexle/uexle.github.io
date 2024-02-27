@@ -201,7 +201,7 @@ header button:hover {
     object-fit: cover;
     border-radius: 5px;
     box-shadow: 0px 0px 10px 0px var(--shadow-color);
-    transition: 0.5s;
+    transition: filter 0.5s;
 }
 
 .projeto img:hover {
@@ -298,7 +298,7 @@ footer p {
     }
 
     .projeto img {
-        width: inherit;
+        width: 100%;
         height: fit-content;
     }
 
